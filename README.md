@@ -1,5 +1,12 @@
 # restapi-template
-A simple and easy to use Rest API Template, made with Flask.
+A simple and easy to use Rest API Template, made with Flask with AntiSpam with system.
+
+Here is the usage of this template:
+ - Easy to use & lightweight
+ - Antispam system
+ - Blacklist endpoint
+ - Documentation (Soon)
+ - Easy handle get and post parameters
 
 # To create a route 
 Must import required modules when creating a new route in a new file
@@ -33,7 +40,8 @@ def test_plugin_with_params():
 ```
 When you navigate to your endpoint you can access the parameter from `set_params`
 You can get the value from parameter:
-``python
+
+```python
 params, err = app._set_params(method="GET", params=["hello"])
 
 # example endpoint: http://127.0.0.1/params?hello=world
