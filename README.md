@@ -1,5 +1,6 @@
 # restapi-template
-Rest API Template, made with Flask
+A simple and easy to use Rest API Template, made with Flask.
+
 # To create a route 
 Must import required modules when creating a new route in a new file
 ```python
@@ -14,5 +15,27 @@ Here is the example code:
 @app.register_route(name="test", info="Testing plugin route...", anti_spam=4)
 def test_plugin():
     # rest of your codes
-    return jsonify(message="example plugin route created...")
+    return app._jsonify(message="example plugin route created...")
+```
+
+You can use `app._set_params()` to set required parameters
+Here is the example code:
+```python
+@app.register_route(name="params", info="Testing plugin route...", anti_spam=4)
+def test_plugin_with_params():
+
+    params, err = app._set_params(params=["hello"])
+    if err:
+        return app._jsonify(error=err), 400
+    
+    # rest of your codes
+    return app._jsonify(message="example plugin route  with params...", hello=params.hello)
+```
+When you navigate to your endpoint you can access the parameter from `set_params`
+You can get the value from parameter:
+``python
+params, err = app._set_params(method="GET", params=["hello"])
+
+# example endpoint: http://127.0.0.1/params?hello=world
+print(params.hello) # Output: world
 ```
