@@ -38,7 +38,8 @@ def test_plugin_with_params():
     # rest of your codes
     return app._jsonify(message="example plugin route  with params...", hello=params.hello)
 ```
-When you navigate to your endpoint you can access the parameter from `set_params`\n
+When you navigate to your endpoint you can access the parameter from `set_params`
+
 You can get the value from parameter:
 
 ```python
