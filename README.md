@@ -38,7 +38,7 @@ def test_plugin_with_params():
     # rest of your codes
     return app._jsonify(message="example plugin route  with params...", hello=params.hello)
 ```
-## Get Access to Parameter
+## Easy to handle parameters
 You can get the value from parameter:
 
 ```python
