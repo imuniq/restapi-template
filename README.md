@@ -49,7 +49,7 @@ print(params.hello) # Output: world
 ```
 ## To launch the Api
 
-``bash
+```bash
 python -m Api
 ```
 
