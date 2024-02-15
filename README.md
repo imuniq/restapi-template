@@ -28,7 +28,7 @@ def test_plugin():
 You can use `app._set_params()` to set required parameters
 Here is the example code:
 ```python
-@app.register_route(name="params", info="Testing plugin route...", anti_spam=4)
+@app.register_route(name="params", info="Testing plugin route...", anti_spam=4, params=["hello"])
 def test_plugin_with_params():
 
     params, err = app._set_params(params=["hello"])
@@ -38,7 +38,7 @@ def test_plugin_with_params():
     # rest of your codes
     return app._jsonify(message="example plugin route  with params...", hello=params.hello)
 ```
-When you navigate to your endpoint you can access the parameter from `set_params`
+When you navigate to your endpoint you can access the parameter from `set_params`\n
 You can get the value from parameter:
 
 ```python
